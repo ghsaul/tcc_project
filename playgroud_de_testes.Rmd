@@ -1,0 +1,110 @@
+---
+title: "playgroud_de_testes"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+# Setup
+
+```{python}
+
+import pandas as pd
+
+```
+
+
+```{python}
+
+df = pd.DataFrame({'a': [1,2,3,4], 'b': ['a', 'b', 'c', 'd']})
+df.info()
+df.head()
+
+```
+
+# Pré-Processamento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

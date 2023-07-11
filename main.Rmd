@@ -1,0 +1,97 @@
+---
+title: "Trabalho de Conclusão de Curso"
+author: "Gabriel Holmer Saul"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+# Introdução
+
+Este trabalho apresenta uma aplicação do modelo BERT 
+
+# Setup
+
+Utilizaremos neste trabalho a linguagem `Python` (versão 3.11.3), `R` (versão 4.2.1), o software `RStudio` (versão 2023.06.0+421), os pacotes em python `pandas` (versão 2.0.3), `transformers` (versão 4.30.2), `torch` (versão 2.0.1), e os pacotes em R .
+
+Instalação de pacotes
+
+```{python}
+# pip install pandas - Usa funções de manipulações em data frames, equivalente ao dplyr
+# pip install transformers - Usa funções
+# pip install torch - Usa funções
+```
+
+Importando pacotes
+
+```{python}
+import torch
+from transformers import BertTokenizer, BertForSequenceClassification
+```
+
+# Pré-Processamento
+
+## Importando o modelo BERT pré-treinado
+
+Vamos importar o modelo BERT base, pois não dispomos de capacidade computacional suficiente para rodar o modelo BERT large. Mais especificamente, utilizaremos o modelo BERT base uncased, que não faz diferença entre palavras com letras maiúsculas e minusculas.
+
+```{python}
+# Load pre-trained BERT model and tokenizer
+model_name = 'bert-base-uncased'  # Change to the desired BERT variant
+tokenizer = BertTokenizer.from_pretrained(model_name)
+model = BertForSequenceClassification.from_pretrained(model_name, num_labels=2)  # Change num_labels according to your classification task
+```
+
+
+```{python}
+# Tokenize and preprocess input text
+def preprocess_text(text):
+    inputs = tokenizer.encode_plus(
+        text,
+        add_special_tokens=True,
+        truncation=True,
+        padding='max_length',
+        max_length=128,  # Adjust according to your input length requirements
+        return_tensors='pt'
+    )
+    return inputs
+
+# Example text for classification
+text = "This is an example sentence for classification."
+
+# Preprocess input text
+inputs = preprocess_text(text)
+
+# Perform classification
+outputs = model(**inputs)
+
+# Get predicted class label
+predicted_label = torch.argmax(outputs.logits).item()
+predicted_class = model.config.id2label[predicted_label]
+
+print("Predicted Class:", predicted_class)
+
+```
+
+
+
+
+
+
+# Tunagem
+
+
+
+
+
+
+
+
+
+
