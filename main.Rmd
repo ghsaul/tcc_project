@@ -37,6 +37,13 @@ from transformers import BertTokenizer, BertForSequenceClassification
 
 # Pré-Processamento
 
+## Importando o banco
+
+```{python}
+
+
+```
+
 ## Importando o modelo BERT pré-treinado
 
 Vamos importar o modelo BERT base, pois não dispomos de capacidade computacional suficiente para rodar o modelo BERT large. Mais especificamente, utilizaremos o modelo BERT base uncased, que não faz diferença entre palavras com letras maiúsculas e minusculas.
@@ -47,6 +54,14 @@ model_name = 'bert-base-uncased'  # Change to the desired BERT variant
 tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertForSequenceClassification.from_pretrained(model_name, num_labels=2)  # Change num_labels according to your classification task
 ```
+
+
+
+```{python}
+
+
+```
+
 
 
 ```{python}
