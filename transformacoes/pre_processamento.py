@@ -1,13 +1,14 @@
 import os
 import pandas as pd
 
-def get_full_df(true_path: str, fake_path: str):
+def get_processed_df(true_path: str, fake_path: str, final_path: str):
     """
     Combine the two original dataframes containing the true and fake news.
     Creates a flag column that is 1 if true and 0 if false.
 
     true_path: Path with the real news
     fake_path: Path with the fake news
+    final_path: Path where the processed df should be stored
     """
     df_true = pd.read_csv(true_path)
     df_fake = pd.read_csv(fake_path)
@@ -18,18 +19,15 @@ def get_full_df(true_path: str, fake_path: str):
     df_true['flag'] = 1
     df_fake['flag'] = 0
 
-    df = pd.concat([df_true, df_fake], ignore_index=True)
+    df = pd.concat([df_true, df_fake])
     df = df[~df['text'].isnull()]
 
-    df.to_csv(os.path.join(os.path.split(true_path)[0], 'data.csv'), index=False)
+    df['text'] = df['text'].str.lower()
 
-def clean_df(data: pd.DataFrame):
-    """
-     Remove null rows
-    ,lower case all words
-    ,remove signs
 
-    data: dataframe to be cleaned
-    """
 
-    
+
+    df.drop_duplicates(inplace=True)
+    df.drop_duplicates(subset='text', keep=False, inplace=True, ignore_index=True)
+
+    df.to_csv(final_path, index=False)
