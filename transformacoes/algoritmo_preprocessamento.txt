@@ -3,11 +3,10 @@
 -Unir as duas bases
 -Remover linhas com nulo
 -colocar o texto em minusculo
--remover acentos
--remover stop words????
--remover sinais de pontuação
--lidar com "palavras" como "/xa0"
-
 -Remover linhas duplicadas em texto-flag, mantendo somente uma das linhas, de forma que sentenças iguais classificadas na mesma categoria tenham só uma das frases (isso seria uma sentença duplicada)
 -Remover linhas duplicadas em texto somente, não mantendo nada, isso seria o caso de a mesma frase ter sido classificada nas duas categorias, o que é considerado um erro e nenhuma das duplicatas deve ser mantida
 
+NAO FORAM REMOVIDOS:
+-stop words
+-sinais de pontuação
+-acentuação (já é removido pelo berttokenizer)
