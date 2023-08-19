@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 dados/*
+!dados/data.csv
 __pycache__
