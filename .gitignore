@@ -4,4 +4,5 @@
 .Ruserdata
 dados/*
 !dados/data.csv
+backup/*
 __pycache__
