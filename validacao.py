@@ -296,4 +296,4 @@ for lote in lotes:
             validacao_final.append(executa_validacao(lote=lote, taxa=taxa, epoca=epoca, nrow=nrows))
 
 df_stats = pd.DataFrame(data=validacao_final)
-df_stats.to_csv(r"E:\Gabriel\Pessoal\Estudo\ufrgs_estatistica\13_semestre\tcc\tcc_project\dados\valicadao.csv", index=False, sep=';')
+df_stats.to_csv(r"E:\Gabriel\Pessoal\Estudo\ufrgs_estatistica\13_semestre\tcc\tcc_project\dados\validacao.csv", index=False, sep=';')
