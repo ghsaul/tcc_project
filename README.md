@@ -1,3 +1,5 @@
-# TCC
+# Final paper
 
-Stores my final thesis project (Trabalho de Conclusão de Curso) to obtain my Bachelor in Statistics from UFRGS
+**EN:** This repository presents the codes used in the preparation of my Final Paper, under the guidance of Professor Dr. Márcia Helena Barbian, to obtain the title of Bachelor of Statistics from the Federal University of Rio Grande do Sul (UFRGS) in the semester 2023/1. The Final Paper was approved under the title "An application of the BERT Natural Language Processing model for fake news classification".
+
+**PT-BR:** Este repositório apresenta os códigos utilizados na elaboração do meu Trabalho de Conclusão de Curso (TCC), sob orientação da Professora Dra. Márcia Helena Barbian, para obtenção do título de Bacharel em Estatística pela Universidade Federal do Rio Grande do Sul (UFRGS) no semestre de 2023/1. O TCC foi aprovado sob o título "Uma aplicação do modelo de Processamento de Linguagem Natural BERT para classificação de notícias falsas".

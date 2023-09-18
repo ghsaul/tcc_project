@@ -4,21 +4,11 @@ import time
 import datetime
 import random
 import torch
-import captum
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
-from statistics import mean
-from collections import Counter
-from langdetect import detect, DetectorFactory
-from sklearn.metrics import matthews_corrcoef
-from sklearn.decomposition import PCA
-from adjustText import adjust_text
-from torch.utils.data import TensorDataset, random_split, DataLoader, RandomSampler, SequentialSampler, Subset
-from transformers import BertTokenizer, BertForSequenceClassification, BertConfig, get_linear_schedule_with_warmup, BertModel
-from captum.attr import LayerIntegratedGradients, TokenReferenceBase, visualization
+from torch.utils.data import TensorDataset, random_split, DataLoader, RandomSampler, SequentialSampler
+from transformers import BertTokenizer, BertForSequenceClassification, get_linear_schedule_with_warmup
 
 nrows = 2000
 lotes = [16,32]
@@ -27,7 +17,6 @@ epocas = [2,3,4]
 
 def executa_validacao(lote, taxa, epoca, nrow):
     # Declarando constantes
-    BANCO_ORIGINAL = r"dados/WELFake_Dataset.csv"
     BANCO_FINAL = r"dados/data.csv"
     PASTA_MODELO = f"dados/model_save_l{lote}_t{taxa}_e{epoca}/"
 
@@ -296,4 +285,4 @@ for lote in lotes:
             validacao_final.append(executa_validacao(lote=lote, taxa=taxa, epoca=epoca, nrow=nrows))
 
 df_stats = pd.DataFrame(data=validacao_final)
-df_stats.to_csv(r"E:\Gabriel\Pessoal\Estudo\ufrgs_estatistica\13_semestre\tcc\tcc_project\dados\validacao.csv", index=False, sep=';')
+df_stats.to_csv("validacao.csv", index=False, sep=';')

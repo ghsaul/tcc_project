@@ -1,9 +1,2 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-dados/*
-!dados/data.csv
-!dados/validacao.csv
-backup/*
-__pycache__
+dados/WELFake_Dataset.csv
+dados/model_v1/pytorch_model.bin
